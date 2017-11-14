@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package pgp;
+
+service Pgp {
+
+  rpc getAllPartners (Any) returns (getAllPartnersResponse) {}
+
+  rpc getPartnerById (getPartnerByIdRequest) returns (getPartnerByIdResponse) {}
+
+  rpc modifyPartnerAgreement (Any) returns (Any) {}
+
+  rpc deletePartnerAgreement (Any) returns (Any) {}
+
+  rpc createPartnerAgreement (Any) returns (Any) {}
+
+  rpc linkCreditLineToPartner (Any) returns (Any) {}
+
+  rpc linkPartnerToPartnerGroup (Any) returns (Any) {}
+
+}
+
+message getAllPartnersResponse {
+  repeated getPartnerByIdResponse partners = 1;
+}
+
+message getPartnerByIdRequest {
+  string id = 1;
+}
+
+message getPartnerByIdResponse {
+  string partnerId = 1;
+  string name = 2;
+  int32  active = 3;
+  Any info = 4;
+  string partnerGroupId = 5;
+  string credtiLineId = 6;
+  string updatedBy = 7;
+  Any updatedAt = 8;
+  string createdBy = 9;
+  Any createdAt = 10;
+}
+
+message Any {
+
+}

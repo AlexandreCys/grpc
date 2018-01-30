@@ -1,14 +1,22 @@
-version: '1'
+version: '2'
 services:
-  client:
-    image: client:0.0.1
-    container_name: clientCompose
-    ports:
-    - "8080:8080"
   server:
-    image: server1:0.0.1
-    container_name: serverCompose
+    image: server1:0.0.2
+    container_name: serverCompose_0.0.2
     ports:
-    - "5050:5050"
-backend:
-  frontend:
+      - "5050:5050"
+    networks:
+      - network
+  client:
+    image: client:0.0.2
+    container_name: clientCompose_0.0.2
+    ports:
+      - "8080:8080"
+    networks:
+      - network
+    depends_on:
+      - server
+
+networks:
+  network:
+    driver: bridge

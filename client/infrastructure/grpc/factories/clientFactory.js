@@ -18,7 +18,7 @@ function createClient(serverData, proto) {
 
   grpc_promise.promisifyAll(client);
 
-  console.log(`Example1 SERVICE connected to : ${serverData.name}(${serverData.ip}:${serverData.port})`)
+  console.log(`Example : CLIENT connected to : ${serverData.name}(${serverData.ip}:${serverData.port})`);
 
   exports[serverData.name] = client;
 }

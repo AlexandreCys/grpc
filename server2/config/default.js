@@ -1,7 +1,7 @@
 const config = {
   server: {
       name: 'example',
-      ip:'0.0.0.0',
+      ip:'127.0.0.1',
       port: '6060',
       protoName: 'example2',
       protoPath: 'example2.proto',

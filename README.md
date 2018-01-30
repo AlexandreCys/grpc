@@ -33,3 +33,32 @@ node server2/server.js
 * __Expose__:
   * __GRPC Server :__ Running on 6060
     * __ENDPOINT__ Example2.exampleSimple
+
+## DOCKER Build
+
+### __Network__
+```
+sudo docker network create --driver bridge isolated_network
+
+```
+
+### __Client__
+```
+sudo docker build -f client/dockerfile -t client:0.0.1 .
+sudo docker run -it --net=isolated_network -p 8080:8080 --name client1 client:0.0.1
+
+```
+
+### __Server1__
+```
+sudo docker build -f server1/dockerfile -t server1:0.0.1 .
+sudo docker run -it --net=isolated_network -p 5050:5050 --name server1 server1:0.0.1
+
+```
+
+### __Server2__
+```
+sudo docker build -f server2/dockerfile -t server2:0.0.1 .
+sudo docker run -it --net=isolated_network -p 6060:6060 --name server2 server2:0.0.1
+
+```

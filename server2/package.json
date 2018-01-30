@@ -16,7 +16,7 @@
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.1",
     "config": "^1.26.2",
-    "grpc": "^1.7.1",
+    "grpc": "^1.8.4",
     "faker": "^4.1.0",
     "fs": "0.0.1-security",
     "lodash": "^4.17.4",

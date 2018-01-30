@@ -10,9 +10,9 @@ const config = {
     },
     {
       name: 'example2',
-      ip:'sandbox-pgp.qover.com',
-      port: '9111',
-      protoName: 'pgp',
+      ip:'0.0.0.0',
+      port: '6060',
+      protoName: 'example2',
       protoPath: 'example2.proto',
     },
   ],

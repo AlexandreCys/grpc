@@ -12,7 +12,7 @@ function callServer1(client) {
 
 function callServer2(client) {
   console.log(client);
-  return services.example2.getAllPartners()
+  return services.example2.exampleSimple()
   .sendMessage({})
   .then(res => {
     console.log('Example1 CLIENT received simple message : ', res)
